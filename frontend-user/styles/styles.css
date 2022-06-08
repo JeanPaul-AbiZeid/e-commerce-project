@@ -116,15 +116,35 @@
 
     .product-card h3{
         margin-top: 1%;
-        margin-left: 1%;
+        margin-left: 3%;
     }
 
     .product-card p{
         margin-top: 1%;
-        margin-left: 1%;
+        margin-left: 3%;
     }
 
     .product-image img{
         width: 100%;
     }
 
+    .card{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 25px;
+        margin-right: 6%;
+    }
+
+    .fav{
+        color: red;
+        font-size: 20px;
+    }
+
+    .nfav{
+        color: gray;
+    }
+
+    .fa{
+        width: 10%;
+    }
