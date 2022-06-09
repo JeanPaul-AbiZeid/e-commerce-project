@@ -58,13 +58,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
             'type' => 1
         ]);
-        // $user = new User;
-        // $user->first_name = $request->first_name;
-        // $user->last_name = $request->last_name;
-        // $user->email = $request->email;
-        // $user->password = Hash::make($request->password);
-        // $user->type = 1;
-        // $user->save();
+        
 
         $token = Auth::login($user);
         return response()->json([
