@@ -15,6 +15,7 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::controller(AdminController::class)->group(function () {
     Route::post('additem', 'addItem');
+    Route::post('addcategory', 'addCategory');
     
 
 });
