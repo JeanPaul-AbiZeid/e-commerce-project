@@ -207,3 +207,37 @@
     .btn-black:hover {
       background-color: rgb(62, 62, 62);
     }
+
+    .profile{
+        display: flex;
+        margin: 3% 5%;
+    }
+
+    .profile-info>img{
+        border-radius: 50%;
+    }
+
+    #name-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 2%;
+    }
+
+    #edit{
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    
+    .btn-logout {
+        background-color: black;
+        color: white;
+        font-size: 20px;
+        line-height: 25px;
+        width: 100%;
+        margin-top: 10%;
+    }
+    .btn-logout:hover {
+        background-color: rgb(62, 62, 62);
+      }
