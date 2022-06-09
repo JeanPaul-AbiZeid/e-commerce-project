@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->integer('type');
+        Schema::table('items', function (Blueprint $table) {
+            $table->integer('category_id');
         });
     }
 
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('items');
     }
 };
