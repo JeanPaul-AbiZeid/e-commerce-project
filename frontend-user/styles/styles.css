@@ -211,6 +211,13 @@
     .profile{
         display: flex;
         margin: 3% 5%;
+        margin-bottom: 0%;
+        height: 90vh;
+    }
+
+    .profile-info{
+        padding-right: 5%;
+        border-right: 1px solid black;
     }
 
     .profile-info>img{
@@ -241,3 +248,37 @@
     .btn-logout:hover {
         background-color: rgb(62, 62, 62);
       }
+
+    #user-fav{
+        width: 100%;
+    }
+
+    .fav-title{
+        margin-left: 5%;
+    }
+
+    .fav-container{
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 2%;
+        padding-right: 1%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        height: 550px;
+        overflow: scroll;
+    }
+
+    .fav-container::-webkit-scrollbar-thumb{
+        background-color: black;
+        border-radius: 5px;
+    }
+    .fav-container::-webkit-scrollbar {
+        width: 20px;
+    }
+      
+      /* Track */
+    .fav-container::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey; 
+        border-radius: 5px;
+    }
