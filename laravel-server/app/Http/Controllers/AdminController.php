@@ -33,4 +33,12 @@ class AdminController extends Controller
             "status" => "Success"
         ], 200);
     }
+
+    public function deleteItem(Request $request){
+        $item = Item::where('id', $request->id)->delete();
+        
+        return response()->json([
+            "status" => "Success"
+        ], 200);
+    }
 }
