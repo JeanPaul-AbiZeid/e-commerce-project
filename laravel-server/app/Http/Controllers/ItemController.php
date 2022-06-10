@@ -34,4 +34,25 @@ class ItemController extends Controller
             "favorites" => $favorites
         ], 200);
     }
+
+    public function change(Request $request){
+        $user = User::find($request->id);
+        $item = Item::find($request->item_id);
+
+        $is_favorite = $user->whereHas('favorites', function($query) use($request){
+            return $query->where('item_id', $request->item_id);
+        })->first();
+        if($is_favorite){
+            $user->favorites()->detach($request->item_id);
+            return response()->json([
+                'message' => 'removed from favorites'
+            ], 200);
+        }
+        else{
+            $user->favorites()->syncWithoutDetaching($request->item_id);
+            return response()->json([
+                'message' => 'added to favorites'
+            ], 200);
+        }
+    }
 }
