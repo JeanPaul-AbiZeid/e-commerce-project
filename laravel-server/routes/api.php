@@ -24,7 +24,7 @@ Route::controller(AdminController::class)->group(function () {
 
 Route::controller(ItemController::class)->group(function () {
     Route::get('/getitems/{id?}', 'getAllItems');
-    Route::get('/getfavorites/{id}', 'getFavorites');
+    Route::get('/getfavorites', 'getFavorites');
     Route::post('/change', 'change');
     
 

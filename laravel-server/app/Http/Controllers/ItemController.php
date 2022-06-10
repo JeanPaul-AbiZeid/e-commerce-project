@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Item;
 use App\Models\User;
 use App\Models\Category;
@@ -26,8 +27,8 @@ class ItemController extends Controller
         ], 200);
     }
 
-    public function getFavorites($id){
-        $user = User::find($id);
+    public function getFavorites(){
+        $user = Auth::user();
         $favorites = $user->favorites;
 
         return response()->json([
@@ -36,9 +37,15 @@ class ItemController extends Controller
     }
 
     public function change(Request $request){
-        $user = User::find($request->id);
         $item = Item::find($request->item_id);
 
+        if(!$item){
+            return response()->json([
+                'message' => 'item does not exist'
+            ]);
+        }
+
+        $user = Auth::user();
         $is_favorite = $user->whereHas('favorites', function($query) use($request){
             return $query->where('item_id', $request->item_id);
         })->first();
