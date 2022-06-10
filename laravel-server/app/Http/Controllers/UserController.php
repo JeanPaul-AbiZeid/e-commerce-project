@@ -15,4 +15,15 @@ class UserController extends Controller
             "user" => $user
         ], 200);
     }
+
+    public function editProfile(Request $request){
+        $update = User::find($request->id);
+        $update->first_name = $request->first_name;
+        $update->last_name = $request->last_name;
+        $update->save();
+        
+        return response()->json([
+            "status" => "Success"
+        ], 200);
+    }
 }

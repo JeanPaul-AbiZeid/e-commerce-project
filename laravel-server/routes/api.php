@@ -30,6 +30,6 @@ Route::controller(ItemController::class)->group(function () {
 
 Route::controller(UserController::class)->group(function () {
     Route::post('/getinfo', 'getInfo');
-    
+    Route::post('/editprofile', 'editProfile');
 
 });
