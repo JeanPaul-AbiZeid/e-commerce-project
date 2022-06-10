@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 
 class AuthController extends Controller
@@ -44,12 +45,17 @@ class AuthController extends Controller
 
     public function register(Request $request){
         // $request->validate([
-        //     'first_name' => 'required|string|max:255',
-        //     'last_name' => 'required|string|max:255',
         //     'email' => 'required|string|email|max:255|unique:users',
-        //     'password' => 'required|string|min:6',
-        //     'type' => 1
         // ]);
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|string|email|max:255|unique:users'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'message' => 'email already exists'
+            ]);
+        }
 
         $user = User::create([
             'first_name' => $request->first_name,
