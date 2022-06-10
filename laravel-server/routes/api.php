@@ -32,5 +32,6 @@ Route::controller(UserController::class)->group(function () {
     Route::post('/getinfo', 'getInfo');
     Route::post('/editprofile', 'editProfile');
     Route::post('/addfavorite', 'addFavorite');
+    Route::post('/removefavorite', 'removeFavorite');
 
 });
