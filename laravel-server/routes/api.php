@@ -25,6 +25,8 @@ Route::group(['middleware' => 'role.admin'], function() {
 
 Route::controller(ItemController::class)->group(function () {
     Route::get('/getitems/{id?}', 'getAllItems');
-    Route::get('/getfavorites', 'getFavorites');
-    Route::post('/change', 'change');
+    Route::group(['middleware' => 'role.user'], function() {
+        Route::get('/getfavorites', 'getFavorites');
+        Route::post('/change', 'change');
+    });
 });
