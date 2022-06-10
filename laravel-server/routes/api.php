@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\UserController;
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
@@ -23,6 +24,12 @@ Route::controller(AdminController::class)->group(function () {
 
 Route::controller(ItemController::class)->group(function () {
     Route::get('/getitems/{id?}', 'getAllItems');
+    
+
+});
+
+Route::controller(UserController::class)->group(function () {
+    Route::post('/getinfo', 'getInfo');
     
 
 });
