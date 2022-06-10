@@ -13,8 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('items', function (Blueprint $table) {
-            $table->integer('category_id');
+        Schema::create('favorites', function (Blueprint $table) {
+            $table->integer('user_id');
+            $table->integer('item_id');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 
@@ -25,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('items');
+        Schema::dropIfExists('favorites');
     }
 };
