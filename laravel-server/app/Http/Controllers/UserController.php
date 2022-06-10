@@ -29,22 +29,4 @@ class UserController extends Controller
         ], 200);
     }
 
-    public function addFavorite(Request $request){
-        $favorite = new favorite;
-        $favorite->user_id = $request->user_id;
-        $favorite->item_id = $request->item_id;
-        $favorite->save();
-        
-        return response()->json([
-            "status" => "Success"
-        ], 200);
-    }
-
-    public function removeFavorite(Request $request){
-        $favorite = Favorite::where('user_id', $request->user_id)->where('item_id', $request->item_id)->delete();
-        
-        return response()->json([
-            "status" => "Success"
-        ], 200);
-    }
 }
