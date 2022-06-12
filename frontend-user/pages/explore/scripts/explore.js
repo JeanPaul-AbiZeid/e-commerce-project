@@ -111,7 +111,7 @@ axios.get('http://127.0.0.1:8000/api/getfavorites', {
         let id = response.data.favorites[i].id;
         favorites.push(id)
     }
-    console.log(favorites)
+    localStorage.setItem("favorites", favorites)
     axios.get('http://127.0.0.1:8000/api/getitems')
         .then((response) => {
             if(favorites.length == 0){
