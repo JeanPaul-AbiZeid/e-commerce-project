@@ -51,7 +51,6 @@ let logIn = (e)=>{
         var token = response.data.authorisation.token
         localStorage.setItem("jwt", token);
         window.location.href = "../explore/explore.html";
-        
     })
     .catch(function (error){
         if(error.response.data.message == "Unauthorized"){
