@@ -10,76 +10,41 @@
     <body>
         <!-- header -->
         <nav class="top-nav">
-            <h1>Look At</h1>
+            <h1 id="look-at">Look At</h1>
             <ul class="links">
-                <li>Home</li>
+                <li id="home">Home</li>
                 <li>About Us</li>
                 <li>Contact</li>
                 <li>
-                <button class="btn btn-white">Log In</button>
+                <button class="btn btn-white" id="log-in">Log In</button>
                 </li>
             </ul>
         </nav>
         <div class="title"><h1>Discover Products</h1></div>
-        <div class="dropdown">
-            <button class="dropbtn">Categories</button>
-            <div class="dropdown-content">
-                <a href="#">Electronics</a>
-                <a href="#">Clothes</a>
-                <a href="#">Toys</a>
+        <div class="product-container">
+            <div class="product-card">
+                <div class="product-image"><img src="./assets/product.jpg"></div>
+                <h3>Name</h3>
+                <p>description</p>
+            </div>
+            <div class="product-card">
+                <div class="product-image"><img src="./assets/product.jpg"></div>
+                <h3>Name</h3>
+                <p>description</p>
+            </div>
+            <div class="product-card">
+                <div class="product-image"><img src="./assets/product.jpg"></div>
+                <h3>Name</h3>
+                <p>description</p>
+            </div>
+            <div class="product-card">
+                <div class="product-image"><img src="./assets/product.jpg"></div>
+                <h3>Name</h3>
+                <p>description</p>
             </div>
         </div>
 
-        <div> 
-            <h1>Category 1</h1>
-            <div class="product-container">
-                <div class="product-card">
-                    <div class="product-image"><img src="./assets/product.jpg"></div>
-                    <h3>Name</h3>
-                    <p>description</p>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"><img src="./assets/product.jpg"></div>
-                    <h3>Name</h3>
-                    <p>description</p>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"><img src="./assets/product.jpg"></div>
-                    <h3>Name</h3>
-                    <p>description</p>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"><img src="./assets/product.jpg"></div>
-                    <h3>Name</h3>
-                    <p>description</p>
-                </div>
-            </div>
-        </div>
-        <div> 
-            <h1>Category 2</h1>
-            <div class="product-container">
-                <div class="product-card">
-                    <div class="product-image"><img src="./assets/product.jpg"></div>
-                    <h3>Name</h3>
-                    <p>description</p>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"><img src="./assets/product.jpg"></div>
-                    <h3>Name</h3>
-                    <p>description</p>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"><img src="./assets/product.jpg"></div>
-                    <h3>Name</h3>
-                    <p>description</p>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"><img src="./assets/product.jpg"></div>
-                    <h3>Name</h3>
-                    <p>description</p>
-                </div>
-            </div>
-        </div>
-        
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./scripts/landing.js"></script>
     </body>
 </html>
