@@ -20,8 +20,9 @@ log_out_btn.addEventListener("click", function(){
     window.location.href = "../log-in/login.html";
 })
 
-function createFavItem(name, description, category){
+function createFavItem(id, name, description, category){
     const main = document.createElement("div");
+    main.id = id;
     main.className = "product-card";
     const container = document.querySelector("#favorite");
     container.appendChild(main);
@@ -58,8 +59,9 @@ function createFavItem(name, description, category){
     main.appendChild(product_desc);
 }
 
-function createItem(name, description, category){
+function createItem(id, name, description, category){
     const main = document.createElement("div");
+    main.id = id;
     main.className = "product-card";
     const container = document.querySelector("#remaining");
     container.appendChild(main);
@@ -105,14 +107,16 @@ axios.get('http://127.0.0.1:8000/api/getfavorites', {
 })
 .then((response) => {
     let favorites = []
-    for(let i=0; i<response.data.favorites.length; i++){
+    for(let i = 0; i<response.data.favorites.length; i++){
         let id = response.data.favorites[i].id;
         favorites.push(id)
     }
     console.log(favorites)
     axios.get('http://127.0.0.1:8000/api/getitems')
         .then((response) => {
-            console.log(response)
+            if(favorites.length == 0){
+                document.querySelector("#favorite").innerHTML = "No favorites Yet";
+            }
             for(let i=0; i<response.data.items.length; i++){
                 let id = response.data.items[i].id;
                 if(favorites.includes(id)){
@@ -120,14 +124,26 @@ axios.get('http://127.0.0.1:8000/api/getfavorites', {
                     let name = response.data.items[j].name;
                     let description = response.data.items[j].description;
                     let category = response.data.items[j].category;
-                    createFavItem(name, description, category);
+                    createFavItem(id, name, description, category);
+                    const product_card = document.querySelectorAll(".product-card");
                 }else{
                     let name = response.data.items[i].name;
                     let description = response.data.items[i].description;
                     let category = response.data.items[i].category;
-                    createItem(name, description, category);
+                    createItem(id, name, description, category);
                 }
             }
+
+            //when user clicks the restaurant card (declared inside the axios because it only worked here)
+            const product_card = document.querySelectorAll(".product-card");
+
+            product_card.forEach(function(item){
+                item.addEventListener("click",function(){
+                    //saved the clicked resto card id to local storage
+                    localStorage.setItem("clicked_product_id", item.id);
+                    window.location.href = "../item/item.html";
+                })
+            })
     }).catch((error) => {
         console.error(error)})
     
