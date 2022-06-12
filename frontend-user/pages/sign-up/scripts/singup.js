@@ -50,7 +50,7 @@ let signUp= (e) =>{
     })
     .then(function (response) {
         if(response.data.message == "error"){
-            alert("email already used or incorrect format")
+            alert("email already used or incorrect email format")
         }
         
         var token = response.data.authorisation.token;
