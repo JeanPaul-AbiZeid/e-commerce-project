@@ -19,3 +19,19 @@ log_out_btn.addEventListener("click", function(){
     localStorage.removeItem("jwt");
     window.location.href = "../log-in/login.html";
 })
+
+document.getElementById("title").innerHTML = "hi";
+document.getElementById("description").innerHTML = "bye";
+document.getElementById("category").innerHTML = "test";
+
+function toggle(){
+    let heart_color = document.querySelector("#heart")
+    if(heart_color.style.color === "red"){
+        heart_color.style.color = "gray";
+    }else{
+        heart_color.style.color = "red";
+    }
+}
+
+let heart = document.getElementById("heart");
+heart.addEventListener('click', toggle);

@@ -134,11 +134,13 @@
     }
 
     .card{
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-size: 25px;
         margin-right: 6%;
+        margin-bottom: 2%;
     }
 
     .fav{
@@ -151,7 +153,7 @@
     }
 
     .fa{
-        width: 10%;
+        width: 5%;
         cursor: pointer;
     }
 
@@ -297,6 +299,16 @@
     }
 
     .info{
+        width: 50%;
         margin-left: 2%;
         margin-top: 2%;
+    }
+
+    #description{
+        margin-top: 2%;
+        font-size: 20px;
+    }
+
+    #heart{
+        color: red;
     }
