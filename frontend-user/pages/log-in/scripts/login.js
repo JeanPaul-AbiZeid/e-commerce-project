@@ -17,3 +17,18 @@ look_at.addEventListener("click", function(){
 sign_up_btn.addEventListener("click", function(){
     window.location.href = "../sign-up/signup.html";
 })
+
+
+//checkbox for showing password
+var show = document.getElementById("toggle");
+
+//function that shows password with checkbox
+show.addEventListener("click", reveal);
+function reveal() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
