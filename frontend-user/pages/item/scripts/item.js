@@ -20,9 +20,16 @@ log_out_btn.addEventListener("click", function(){
     window.location.href = "../log-in/login.html";
 })
 
-document.getElementById("title").innerHTML = "hi";
-document.getElementById("description").innerHTML = "bye";
-document.getElementById("category").innerHTML = "test";
+let item_id = localStorage.getItem("clicked_product_id")
+
+axios({
+    url: 'http://127.0.0.1:8000/api/getitems/' + item_id,
+}).then(function(response){
+    document.getElementById("title").innerHTML = response.data.items.name;
+    document.getElementById("description").innerHTML = response.data.items.description;
+    document.getElementById("category").innerHTML = response.data.items.category;
+    
+})
 
 function toggle(){
     let heart_color = document.querySelector("#heart")
