@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Look At</title>
-  </head>
-  <body>
-    <h1>Look at</h1>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./styles/styles.css" />
+        <title>LookAt</title>
+    </head>
+    <body>
+        <!-- header -->
+        <nav class="top-nav">
+            <h1>Look At</h1>
+        </nav>
+        <div class="main">
+            <div class="form-container">
+                <h1>Sign In</h1>
+                <form id="form">
+                    <input type="text" placeholder="Email address" id="email"><br/>
+                    <input type="password" placeholder="Password" id="password">
+                    <div id="pass"><input type="checkbox" id="toggle">Show Password</div>
+                    <input type="submit" id = "login" class="btn btn-black" value="Log In">
+                </form>
+            </div>
+        </div>
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+        <script src="./scripts/login.js"></script>
+    </body>
 </html>
