@@ -81,4 +81,52 @@
         display: flex;
         justify-content: center;
     }
-  
+
+    .admin{
+        display: flex;
+        margin: 3% 5%;
+        margin-bottom: 0%;
+        height: 90vh;
+    }
+
+    .admin-info{
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid black;
+        padding: 5%;
+    }
+    
+    .product-card {
+        width: 30%;
+        border: 1px solid black;
+        border-radius: 5px;  
+        margin-bottom: 5%;  
+    }
+
+    .product-image img{
+        width: 100%;
+    }
+
+    .card{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 25px;
+        margin-right: 6%;
+    }
+
+    .product-container{
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 2%;
+        padding-right: 1%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        height: 550px;
+        overflow: scroll;
+    }
+
+    .title{
+        margin-left: 5%;
+    }
