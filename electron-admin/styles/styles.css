@@ -130,3 +130,86 @@
     .title{
         margin-left: 5%;
     }
+    
+    .dropbtn {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+    }
+      
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    #add-item-button{
+        float: right;
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        font-size: 15px;
+        padding: 5px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background-color: #fefefe;
+        border-radius: 5px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 30%;
+    }
+
+    #item-name{
+        width: 90%;
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 2%;
+    }
+
+    #item-description{
+        width: 90%;
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 2%;
+    }

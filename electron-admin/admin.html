@@ -21,6 +21,7 @@
                 <button type="button" id="add-category" class="btn btn-black">Add Category</button>
                 <button type="button" id="logout" class="btn btn-black">Logout</button>
             </div>
+
             <div id="user-fav">
                 <div class="title"><h1>All Items</h1></div>
                 <div class="product-container">
@@ -61,6 +62,29 @@
                     </div>
                 </div>
             </div>
+
+            <!-- add item Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                <span class="close">&times;</span><br/><br/>
+                <form class="form">
+                    <input type="text" placeholder="Item name" id="item-name"><br/>
+                    <input type="text" placeholder="Item description" id="item-description"><br/>
+                    <div class="dropdown">
+                        <button class="dropbtn">Dropdown</button>
+                        <div class="dropdown-content">
+                            <h4>Category 1</h4>
+                            <h4>Category 2</h4>
+                            <h4>Category 3</h4>
+                        </div>
+                    </div>
+                    <button type="submit" id="add-item-button">Add Item</button>
+                </form>
+            </div>
         </div>
+
+        <script src="./scripts/admin.js"></script>
     </body>
 </html>
