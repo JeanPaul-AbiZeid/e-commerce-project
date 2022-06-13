@@ -40,10 +40,11 @@
                     <input type="text" placeholder="Item name" id="item-name"><br/>
                     <input type="text" placeholder="Item description" id="item-description"><br/>
                     <div id="buttons">
-                        <div class="dropdown">
-                            <button class="dropbtn">Category</button>
-                            <div class="dropdown-content">
-                            </div>
+                        <div>
+                            <form action="/action_page.php">
+                                <label>Categories:</label>
+                                <select id="categories" name="categories"></select> 
+                            </form>
                         </div>
                         <button type="submit" id="add-item-button">Add Item</button>
                     </div>

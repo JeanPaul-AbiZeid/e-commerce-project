@@ -101,12 +101,12 @@ function createItem(name, description, category){
 }
 
 function createCategory(id, name){
-    const cat = document.createElement("h4");
+    const cat = document.createElement("option");
     cat.id = id;
-    cat.className = "category";
-    cat.innerText = name;
+    cat.value = name;
+    cat.innerHTML = name;
 
-    const drop = document.querySelector(".dropdown-content")
+    const drop = document.getElementById("categories")
     drop.appendChild(cat);
 }
 
