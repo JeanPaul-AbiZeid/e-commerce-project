@@ -27,6 +27,15 @@ class ItemController extends Controller
         ], 200);
     }
 
+    public function getAllcategories(){
+        $category = Category::all();
+        
+        return response()->json([
+            "status" => "Success",
+            "items" => $category
+        ], 200);
+    }
+
     public function getFavorites(){
         $user = Auth::user();
         $favorites = $user->favorites;

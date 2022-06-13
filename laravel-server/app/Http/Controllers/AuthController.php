@@ -50,7 +50,7 @@ class AuthController extends Controller
 
         if ($validator->fails()) {
             return response()->json([
-                'message' => 'email already exists'
+                'message' => 'error'
             ]);
         }
 
