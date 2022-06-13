@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
+// import axios from 'axios'
 
 const createWindow = () => {
   // Create the browser window.
@@ -12,7 +13,7 @@ const createWindow = () => {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadFile('admin.html')
+  mainWindow.loadFile('index.html')
 }
 
 app.whenReady().then(() => {

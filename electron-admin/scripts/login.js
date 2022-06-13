@@ -14,7 +14,7 @@ function reveal() {
 
 const log_in_btn = document.getElementById("login");
 
- //function for log in button on click
+//function for log in button on click
 let logIn = (e)=>{
     e.preventDefault();
     let data = new FormData();
@@ -29,10 +29,11 @@ let logIn = (e)=>{
       data: data,
     })
     .then(function (response) {
-        // var token = response.data.authorisation.token
-        // localStorage.setItem("jwt", token);
-        // window.location.href = "../explore/explore.html";
-        console.log(response)
+        if(response.data.user.type == 0){
+            var token = response.data.authorisation.token
+            localStorage.setItem("jwt", token);
+            window.location.href = "./admin.html";
+        }
     })
     .catch(function (error){
         // if(error.response.data.message == "Unauthorized"){
