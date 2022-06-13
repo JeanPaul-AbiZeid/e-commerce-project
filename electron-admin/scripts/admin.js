@@ -27,8 +27,40 @@ if (event.target == modal) {
 }
 
 const log_out_btn = document.getElementById("logout");
+const add_category = document.getElementById("add-category");
 
 log_out_btn.addEventListener("click", function(){
     localStorage.removeItem("jwt");
     window.location.href = "./index.html";
 })
+
+function add(){
+    jwt = localStorage.getItem("jwt")
+
+    let data = new FormData();
+    
+    data.append('name', document.getElementById("item-category").value);
+
+    axios({
+        method : 'post',
+        url : 'http://127.0.0.1:8000/api/addcategory',
+        headers: {
+            'Authorization': `token ${jwt}`
+        },
+        data: data
+    })
+    .then((response) => {
+        console.log(response)
+    })
+    .catch((error) => {
+    console.error(error)
+    })
+}
+
+add_category.addEventListener('click', add);
+
+
+
+
+
+
