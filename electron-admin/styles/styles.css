@@ -154,6 +154,10 @@
         z-index: 1;
         cursor: pointer;
     }
+
+    .dropdown-content h4:hover{
+        background-color: gray;
+    }
     
     .dropdown:hover .dropdown-content {
         display: block;
@@ -226,4 +230,36 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    @media only screen and (max-width: 900px) {
+        .admin{
+            flex-direction: column;
+        }
+
+        .product-card{
+            width: 45%;
+        }
+
+        .admin-info{
+            border: none;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .product-container{
+            height: 300px;
+        }
+
+        .btn-black{
+            width: 50%;
+            font-size: 20px;
+            line-height: 20px;
+        }
+
+        #item-category{
+            width: 50%;
+        }
+
+
     }

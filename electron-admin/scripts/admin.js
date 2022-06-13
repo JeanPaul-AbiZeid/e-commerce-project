@@ -103,6 +103,7 @@ function createItem(name, description, category){
 function createCategory(id, name){
     const cat = document.createElement("h4");
     cat.id = id;
+    cat.className = "category";
     cat.innerText = name;
 
     const drop = document.querySelector(".dropdown-content")
@@ -120,6 +121,21 @@ axios({
     }
 })
 
+const categ = document.getElementsByClassName("category")
+const cat_button = document.querySelector(".dropbtn")
+
+// categ.forEach(function(item){
+//     item.addEventListener("click",function(){
+//         console.log("test")
+//     })
+// })
+console.log(categ.length)
+console.log("hi")
+// for (var j = 0; j < categ.length; j++) {
+//     categ[j].addEventListener("click",function(){
+//     console.log("test");
+// })
+// }
 
 
 
