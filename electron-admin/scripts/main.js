@@ -1,6 +1,5 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
-// import axios from 'axios'
 
 const createWindow = () => {
   // Create the browser window.

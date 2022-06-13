@@ -100,6 +100,26 @@ function createItem(name, description, category){
     main.appendChild(product_desc);
 }
 
+function createCategory(id, name){
+    const cat = document.createElement("h4");
+    cat.id = id;
+    cat.innerText = name;
+
+    const drop = document.querySelector(".dropdown-content")
+    drop.appendChild(cat);
+}
+
+axios({
+    url: 'http://127.0.0.1:8000/api/getcategories',
+}).then(function(response){
+    for(let i=0; i<response.data.items.length; i++){
+        let name = response.data.items[i].name;
+        let id = response.data.items[i].id;
+        
+        createCategory(id, name);
+    }
+})
+
 
 
 
