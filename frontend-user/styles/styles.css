@@ -313,3 +313,21 @@
     #heart{
         color: red;
     }
+
+    @media only screen and (max-width: 900px) {
+        .product-card{
+            width: 45%;
+        }
+
+        .main{
+            margin-top: 25%;
+        }
+
+        .item{
+            flex-direction: column;
+        }
+
+        .info{
+            width: 90%;
+        }
+    }
