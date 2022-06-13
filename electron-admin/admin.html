@@ -17,6 +17,18 @@
         
         <div class="admin">
             <div class="admin-info">
+                <form action="/action_page.php">
+                    <input type="text" placeholder="Item name" id="item-name"><br/>
+                    <input type="text" placeholder="Item description" id="item-description"><br/>
+                    <div id="buttons">
+                        <div>
+                            <form action="/action_page.php">
+                                <label>Categories:</label>
+                                <select id="categories" name="categories"></select> 
+                            </form>
+                        </div>
+                    </div>
+                </form>
                 <button type="button" id="add-item" class="btn btn-black">Add Item</button>
                 <input type="text" placeholder="New Category" id="item-category">
                 <button type="button" id="add-category" class="btn btn-black">Add Category</button>
@@ -31,25 +43,13 @@
             </div>
 
             <!-- add item Modal -->
-            <div id="myModal" class="modal">
+            <!-- <div id="myModal" class="modal">
 
-                <!-- Modal content -->
+                Modal content
                 <div class="modal-content">
                 <span class="close">&times;</span><br/><br/>
-                <form class="form">
-                    <input type="text" placeholder="Item name" id="item-name"><br/>
-                    <input type="text" placeholder="Item description" id="item-description"><br/>
-                    <div id="buttons">
-                        <div>
-                            <form action="/action_page.php">
-                                <label>Categories:</label>
-                                <select id="categories" name="categories"></select> 
-                            </form>
-                        </div>
-                        <button type="submit" id="add-item-button">Add Item</button>
-                    </div>
-                </form>
-            </div>
+                
+            </div> -->
         </div>
 
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
